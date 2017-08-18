@@ -1,0 +1,42 @@
+<div style="margin-top: 80px">
+  <div class="container">
+<div class="row">
+
+  <div class="col-xs-12 col-sm-9">
+
+    <script>
+      window.sr = ScrollReveal();
+      sr.reveal('.anim', { duration: 200 });
+    </script>
+    <div *ngFor="let n of news" class="media">
+      <a href="">
+      <div class="media-left">
+          <img width="150px" height="100px" class="media-object" src="../../assets/img/slide/cherhigov.jpg" alt="...">
+      </div>
+      <div class="media-body">
+        {{ n?.title }}
+      </div>
+      <div class="media-bottom media-right">
+        <i style="color: #1b95e0" class="fa fa-calendar" aria-hidden="true"><span style="color: #000;padding-left: 5px">{{ n?.date }}</span></i>
+      </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="col-xs-6 col-sm-3 sidebar-offcanvas">
+    <div class="b-page">
+      <a target="_blank" href="https://beta.gosuslugi.ru" onclick="ExitApi.exit(https://beta.gosuslugi.ru)" class="b-bnr banner15 b-bnr_n240x400 animated">
+        <div class="b-bnr__after"></div>
+        <div class="b-bnr__logo b-bnr__logo_n240x400"><span style="margin-left: 0;"><img style="width: 122px;height: 14px;display: block;" src="../../assets/img/banner/gosuslugi/lg.png" alt=""></span>
+        </div>
+        <div class="b-bnr__text b-bnr__text_n240x400">
+          <div class="b-bnr__text b-bnr__text_n240x400_1 strong"><img src="../../assets/img/banner/gosuslugi/txt1.png" alt=""></div>
+          <div class="b-bnr__text b-bnr__text_n240x400_2"><img src="../../assets/img/banner/gosuslugi/txt2.png" alt="">
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
