@@ -51,13 +51,13 @@
         <ul class="nav nav-justified" id="nav-tabs" role="tablist">
           <li role="presentation" class="active">
             <a href="#gosuslugi" aria-controls="gosuslugi" role="tab" data-toggle="tab">
-              <img class="img-circle" src="../../assets/img/info_tab/logo_gosuslugi.png" />
+              <img style="border-radius: 50%;" src="../../assets/img/info_tab/logo_gosuslugi.png" />
               <span class="quote"><i class="fa fa-quote-left"></i></span>
             </a>
           </li>
           <li role="presentation">
             <a href="#portal" aria-controls="portal" role="tab" data-toggle="tab">
-              <img class="img-circle" src="../../assets/img/info_tab/rpgu-logo.png" />
+              <img style="border-radius: 50%;" class="" src="../../assets/img/info_tab/rpgu-logo.png" />
               <span class="quote"><i class="fa fa-quote-left"></i></span>
             </a>
           </li>
@@ -414,29 +414,3 @@
     </div>
   </div>
 -->
-
-
-
-
-<script>
-  $(document).ready( function() {
-
-    var clickEvent = false;
-    $('#myCarousel').on('click', '.nav a', function() {
-      clickEvent = true;
-      $('.nav li').removeClass('active');
-      $(this).parent().addClass('active');
-    }).on('slid.bs.carousel', function(e) {
-      if(!clickEvent) {
-        var count = $('.nav').children().length -1;
-        var current = $('.nav li.active');
-        current.removeClass('active').next().addClass('active');
-        var id = parseInt(current.data('slide-to'));
-        if(count == id) {
-          $('.nav li').first().addClass('active');
-        }
-      }
-      clickEvent = false;
-    });
-  });
-</script>

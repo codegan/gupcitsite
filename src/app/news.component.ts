@@ -9,6 +9,7 @@ import { News } from './news';
 @Component({
   selector: 'news-app',
   templateUrl: './news.component.html',
+  styleUrls: ['news.component.css'],
   providers: [HttpService]
 })
 
