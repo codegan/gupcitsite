@@ -16,13 +16,15 @@ import { News } from './news';
 export class NewsComponent implements OnInit{
   news: News[]=[];
   selectNews: News;
-  constructor(private httpService: HttpService){}
+  constructor(private httpService: HttpService){
+
+  }
 
   ngOnInit(){
     this.httpService.getData().subscribe((data: Response) => this.news=data.json().news);
   }
 
-  getSelect(){
+  selectNewss(){
     this.httpService.getSelectData().subscribe((data: Response) => this.selectNews=data.json().news);
   }
   foo(){

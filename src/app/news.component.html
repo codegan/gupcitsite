@@ -1,30 +1,26 @@
 <div style="margin-top: 80px">
   <div class="container">
 <div class="row">
-
   <div class="col-xs-12 col-sm-9">
-
-    <script>
-      window.sr = ScrollReveal();
-      sr.reveal('.anim', { duration: 200 });
-    </script>
+    <!--Новостной блок-->
     <div *ngFor="let n of news" class="media">
       <div class="media-left">
           <img width="150px" height="100px" class="media-object" src="../../assets/img/slide/cherhigov.jpg" alt="...">
       </div>
       <div class="media-body">
+        {{ n?._id }}<br>
         {{ n?.title }}
       </div>
       <div class="media-bottom media-right">
         <!-- Button trigger modal -->
-        <button style="color: #0e0e0e;background-color: #e5e6e6;border-color: #8c8c8c;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+        <button (click)="selectNewss(1)" style="color: #0e0e0e;background-color: #e5e6e6;border-color: #8c8c8c;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
           Подробнее...
         </button>
         <i style="color: #1b95e0" class="fa fa-calendar" aria-hidden="true"><span style="color: #000;padding-left: 5px">{{ n?.date }}</span></i>
       </div>
     </div>
-  </div>
 
+  </div>
   <div class="col-xs-6 col-sm-3 sidebar-offcanvas">
     <div>
       <a target="_blank" href="https://gosuslugi.ru">
@@ -35,7 +31,7 @@
 </div>
   </div>
 </div>
-<!-- Modal -->
+<!-- Modal для новости-->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -44,7 +40,7 @@
         <h4 class="modal-title" id="myModalLabel"></h4>
       </div>
       <div class="modal-body">
-        ...
+        {{selectNews.title}}<br>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
