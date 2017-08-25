@@ -8,12 +8,11 @@
           <img width="150px" height="100px" class="media-object" src="../../assets/img/slide/cherhigov.jpg" alt="...">
       </div>
       <div class="media-body">
-        {{ n?._id }}<br>
         {{ n?.title }}
       </div>
       <div class="media-bottom media-right">
         <!-- Button trigger modal -->
-        <button (click)="selectNewss(1)" style="color: #0e0e0e;background-color: #e5e6e6;border-color: #8c8c8c;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+        <button (click)="selectNewss(n?._id)" style="color: #0e0e0e;background-color: #e5e6e6;border-color: #8c8c8c;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
           Подробнее...
         </button>
         <i style="color: #1b95e0" class="fa fa-calendar" aria-hidden="true"><span style="color: #000;padding-left: 5px">{{ n?.date }}</span></i>
@@ -43,8 +42,7 @@
         {{selectNews.title}}<br>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
       </div>
     </div>
   </div>

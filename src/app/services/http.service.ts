@@ -14,8 +14,8 @@ export class HttpService{
   getData(){
     return this.http.get('http://localhost:8081/api/news')
   }
-  getSelectData(){
-    return this.http.get('http://localhost:8081/api/news/590992b0f36d2842bdf87797')
+  getSelectData(id: String){
+    return this.http.get('http://localhost:8081/api/news/'+id)
   }
 
   postData(obj: User){

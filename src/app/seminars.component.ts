@@ -21,9 +21,6 @@ export class SeminarsComponent implements OnInit{
     this.httpService.getData().subscribe((data: Response) => this.news=data.json().news);
   }
 
-  getSelect(){
-    this.httpService.getSelectData().subscribe((data: Response) => this.selectNews=data.json().news);
-  }
   foo(){
   alert('foo');
 }

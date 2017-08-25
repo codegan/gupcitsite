@@ -24,8 +24,8 @@ export class NewsComponent implements OnInit{
     this.httpService.getData().subscribe((data: Response) => this.news=data.json().news);
   }
 
-  selectNewss(){
-    this.httpService.getSelectData().subscribe((data: Response) => this.selectNews=data.json().news);
+  selectNewss(id: String){
+    this.httpService.getSelectData(id).subscribe((data: Response) => this.selectNews=data.json().news);
   }
   foo(){
   alert('foo');
