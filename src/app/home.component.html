@@ -365,31 +365,37 @@
     </div>
     <div class="contact-section">
       <div class="container">
-        <form>
+        <form #myForm="ngForm" novalidate>
           <div class="col-md-6 form-line">
             <div class="form-group">
               <label>Ваше имя</label>
-              <input type="text" class="form-control" id="" placeholder=" Введите ваше имя">
+              <input type="text" class="form-control" name="name" [(ngModel)]="mail.name" required minlength="3" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" placeholder=" Введите ваше имя">
             </div>
             <div class="form-group">
               <label for="exampleInputEmail">Ваш электронный адрес</label>
-              <input type="email" class="form-control" id="exampleInputEmail" placeholder=" Введите ваш почтовый адрес">
+              <input type="email" class="form-control" id="exampleInputEmail" name="email" [(ngModel)]="mail.email"
+                            required pattern="[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}" placeholder=" Введите ваш почтовый адрес">
             </div>
             <div class="form-group">
               <label for="telephone">Номер телефона</label>
-              <input type="tel" class="form-control" id="telephone" placeholder=" Введите ваш номер телефона">
+              <input type="tel" class="form-control" id="telephone" name="phone" [(ngModel)]="mail.phone"
+                            required pattern="[0-9]{10}"  placeholder=" Введите ваш номер телефона">
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
+              <label> Тема</label>
+              <input type="text" class="form-control" name="theme" [(ngModel)]="mail.theme"
+                            required placeholder="Введите текст сообщения">
+            </div>
+            <div class="form-group">
               <label for ="description"> Сообшение</label>
-              <textarea  class="form-control" id="description" placeholder="Введите текст сообщения"></textarea>
+              <textarea  class="form-control" id="description" name="text" [(ngModel)]="mail.text"
+                            required placeholder="Введите текст сообщения"></textarea>
             </div>
             <div>
-
-              <button type="button" class="btn btn-default submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Отправить</button>
+              <button [disabled]="myForm.invalid" class="btn btn-default submit" (click)="submit(mail)"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Отправить</button>
             </div>
-
           </div>
         </form>
       </div>
