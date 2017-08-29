@@ -12,16 +12,5 @@ import { News } from './news';
   providers: [HttpService]
 })
 
-export class SeminarsComponent implements OnInit{
-  news: News[]=[];
-  selectNews: News;
-  constructor(private httpService: HttpService){}
-
-  ngOnInit(){
-    this.httpService.getData().subscribe((data: Response) => this.news=data.json().news);
-  }
-
-  foo(){
-  alert('foo');
-}
+export class SeminarsComponent{
 }

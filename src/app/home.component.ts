@@ -13,12 +13,14 @@ import {Observable} from 'rxjs/Observable';
 
 export class HomeComponent{
    mail: Mail =  new Mail();
+   message:string;
   constructor(private httpService: HttpService){}
   submit(mail){
         console.log(this.mail);
         this.httpService.postMail(mail).subscribe(
                data => {
                  // refresh the list
+                 this.message = data.message;
                  return true;
                },
                error => {

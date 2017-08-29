@@ -394,8 +394,13 @@
                             required placeholder="Введите текст сообщения"></textarea>
             </div>
             <div>
-              <button [disabled]="myForm.invalid" class="btn btn-default submit" (click)="submit(mail)"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Отправить</button>
+              <button style="padding-bottom:7px" class="btn btn-default" (click)="submit(mail)"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Отправить</button>
             </div>
+            <ng-container *ngIf="message">
+              <div class="alert alert-success" role="alert">
+                {{message}}
+              </div>
+            </ng-container>
           </div>
         </form>
       </div>

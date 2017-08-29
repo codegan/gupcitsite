@@ -5,14 +5,14 @@
     <!--Новостной блок-->
     <div *ngFor="let n of news" class="media">
       <div class="media-left">
-          <img width="150px" height="100px" class="media-object" src="../../assets/img/slide/cherhigov.jpg" alt="...">
+          <img width="150px" height="100px" class="media-object" src="{{ n?.baseImg }}" alt="...">
       </div>
       <div class="media-body">
-        {{ n?.title }}
+        <p style="padding-left:10px;padding-left:10px">{{ n?.title }}</p>
       </div>
       <div class="media-bottom media-right">
         <!-- Button trigger modal -->
-        <button (click)="selectNewss(n?._id)" style="color: #0e0e0e;background-color: #e5e6e6;border-color: #8c8c8c;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+        <button (click)="selectNewss(n?._id)" type="button" class="btn btn-light" data-toggle="modal" data-target="#myModal">
           Подробнее...
         </button>
         <i style="color: #1b95e0" class="fa fa-calendar" aria-hidden="true"><span style="color: #000;padding-left: 5px">{{ n?.date }}</span></i>
@@ -21,9 +21,19 @@
 
   </div>
   <div class="col-xs-6 col-sm-3 sidebar-offcanvas">
-    <div>
+    <div style="padding-bottom:10px">
       <a target="_blank" href="https://gosuslugi.ru">
           <img src="../assets/img/banner/gosuslugi/240x400.png">
+      </a>
+    </div>
+    <div style="padding-bottom:10px">
+      <a target="_blank" href="http://www.chechnya.gov.ru">
+          <img src="../assets/img/banner/glava_pravitelstvo.jpg">
+      </a>
+    </div>
+    <div style="padding-bottom:10px">
+      <a target="_blank" href="http://www.pgu.gov-chr.ru">
+          <img src="../assets/img/banner/portel_rpgu.jpg">
       </a>
     </div>
   </div>
@@ -39,10 +49,11 @@
         <h4 class="modal-title" id="myModalLabel"></h4>
       </div>
       <div class="modal-body">
-        {{selectNews.title}}<br>
+        <p style="text-indent: 1.5em;">{{selectNews?.text}}</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+        <i style="color: #1b95e0" class="fa fa-calendar" aria-hidden="true"><span style="color: #000;padding-left: 5px;padding-right: 7px">{{ selectNews?.date }}</span></i>
+        <button type="button" class="btn btn-info" data-dismiss="modal">Закрыть</button>
       </div>
     </div>
   </div>

@@ -14,13 +14,14 @@ export class HttpService{
 
   getData(){
     return this.http.get('http://localhost:8081/api/news')
+    //return this.http.get('http://192.168.2.195:8081/api/news')
   }
   getSelectData(id: String){
     return this.http.get('http://localhost:8081/api/news/'+id)
+    //return this.http.get('http://192.168.2.195:8081/api/news/'+id)
   }
 
     postMail(mail: Mail){
-            console.log("helloooooo");
             let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
             var params = new URLSearchParams();
             params.set('name', mail.name);
@@ -29,6 +30,7 @@ export class HttpService{
             params.set('theme', mail.theme);
             params.set('text', mail.text);
             return this.http.post('http://localhost:8081/api/mail', params.toString(), { headers: headers })
+            //return this.http.post('http://192.168.2.195:8081/api/mail', params.toString(), { headers: headers })
                             .map(res => res.json())
                             .catch((error:any) =>{return Observable.throw(error);});;
          }
@@ -42,6 +44,7 @@ export class HttpService{
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
         return this.http.post('http://localhost:8081/api/authenticate/', body, {headers: headers})
+        //return this.http.post('http://192.168.2.195:8081/api/authenticate/', body, {headers: headers})
                         .map((resp:Response)=>
                         console.log(resp.json()))
                         .catch((error:any) =>{return Observable.throw(error);});
