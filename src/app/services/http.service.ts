@@ -15,10 +15,12 @@ export class HttpService{
   getData(){
     return this.http.get('http://localhost:8081/api/news')
     //return this.http.get('http://192.168.2.195:8081/api/news')
+    //return this.http.get('http://188.0.180.118:8081/api/news')
   }
   getSelectData(id: String){
     return this.http.get('http://localhost:8081/api/news/'+id)
     //return this.http.get('http://192.168.2.195:8081/api/news/'+id)
+    //return this.http.get('http://188.0.180.118:8081/api/news/'+id)
   }
 
     postMail(mail: Mail){
