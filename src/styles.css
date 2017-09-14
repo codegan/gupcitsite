@@ -2,7 +2,7 @@
 @import "../node_modules/bootstrap-zaur/css/bootstrap.css";
 @import "assets/css/carousel.css";
 @import "assets/css/font-awesome-4.7.0/css/font-awesome.css";
-
+@import "../node_modules/flowplayer/dist/skin/skin.css";
 body{
   background-color: whitesmoke;
 }

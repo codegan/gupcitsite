@@ -23,7 +23,8 @@
       ],
       "scripts": [
         "../node_modules/bootstrap-zaur/js/jquery-3.1.1.min.js",
-        "../node_modules/bootstrap-zaur/js/bootstrap.js"
+        "../node_modules/bootstrap-zaur/js/bootstrap.js",
+        "../node_modules/flowplayer/dist/flowplayer.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
