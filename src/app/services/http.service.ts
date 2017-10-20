@@ -13,14 +13,14 @@ export class HttpService{
   constructor(private http: Http){ }
 
   getData(){
-    return this.http.get('http://localhost:8081/api/news')
+    //return this.http.get('http://localhost:8081/api/news')
     //return this.http.get('http://192.168.2.195:8081/api/news')
-    //return this.http.get('http://188.0.180.118:8081/api/news')
+    return this.http.get('http://188.0.180.118:8081/api/news')
   }
   getSelectData(id: String){
-    return this.http.get('http://localhost:8081/api/news/'+id)
+    //return this.http.get('http://localhost:8081/api/news/'+id)
     //return this.http.get('http://192.168.2.195:8081/api/news/'+id)
-    //return this.http.get('http://188.0.180.118:8081/api/news/'+id)
+    return this.http.get('http://188.0.180.118:8081/api/news/'+id)
   }
 
     postMail(mail: Mail){
@@ -31,8 +31,9 @@ export class HttpService{
             params.set('phone', mail.phone);
             params.set('theme', mail.theme);
             params.set('text', mail.text);
-            return this.http.post('http://localhost:8081/api/mail', params.toString(), { headers: headers })
+            //return this.http.post('http://localhost:8081/api/mail', params.toString(), { headers: headers })
             //return this.http.post('http://192.168.2.195:8081/api/mail', params.toString(), { headers: headers })
+            return this.http.post('http://188.0.180.118:8081/api/mail', params.toString(), { headers: headers })
                             .map(res => res.json())
                             .catch((error:any) =>{return Observable.throw(error);});;
          }
